@@ -1,5 +1,5 @@
 BUILD_DIR = build
-PDF_DIR = pdf
+PDF_DIR = pdfs
 
 LATEXMK = latexmk 
 MKFLAGS = -bibtex -pdf -f
@@ -12,17 +12,18 @@ TEXFLAGS = -synctex=1 --interaction=nonstopmode
 all: pdf
 
 clean:
-	$(RM) *.app *.aux *.bbl *.blg
 	$(RM) *.fdb_latexmk *.fls *.gz
 	$(RM) *.lof *.log *.out *.status
 	$(RM) *.toc *.xml *-blx.bib *.pdf
-	$(RM) -rf $(BUILD_DIR)
-	$(RM) -rf $(PDF_DIR)
+	$(RM) -r $(BUILD_DIR)/*
+	$(RM) -r $(PDF_DIR)/*
+	$(RM) -r $(BUILD_DIR)
+	$(RM) -r $(PDF_DIR)
 
-lua: *.tex *.bib ./tex/*
+lua: *.tex ./tex/*
 	$(MAKE) base CTEX=$(LUALATEX) OUT=$(BUILD_DIR)/$(LUALATEX)
 
-pdf: *.tex *.bib ./tex/*
+pdf: *.tex ./tex/*
 	$(MAKE) base CTEX=$(PDFLATEX) OUT=$(BUILD_DIR)/$(PDFLATEX)
 
 base: 

@@ -32,6 +32,14 @@ Promotor: dr inż. Tomasz Winiarski
 }
 \date{25 października 2019}
 
+\AtBeginSection[]
+{
+    \begin{frame}[noframenumbering]
+        \frametitle{Agenda}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
 \begin{document}
 
 \begin{frame}
@@ -39,7 +47,7 @@ Promotor: dr inż. Tomasz Winiarski
 \end{frame}
 
 \begin{frame}
-\frametitle{Overview}
+\frametitle{Agenda}
 \tableofcontents
 \end{frame}
 
@@ -49,12 +57,11 @@ Promotor: dr inż. Tomasz Winiarski
 
 \input{tex/1-cel-pracy.tex}
 \input{tex/2-tematyka.tex}
-\input{tex/3-przeglad-rozwiazan.tex}
-\input{tex/4-zadania-pracy.tex}
-\input{tex/5-dotychczasowe-wyniki.tex}
-\input{tex/6-plan-semestru.tex}
-\input{tex/7-perspektywy-rozwoju.tex}
-
+%\input{tex/3-przeglad-rozwiazan.tex}
+%\input{tex/4-zadania-pracy.tex}
+%\input{tex/5-dotychczasowe-wyniki.tex}
+%\input{tex/6-plan-semestru.tex}
+%\input{tex/7-perspektywy-rozwoju.tex}
 \input{tex/8-podsumowanie.tex}
 
 \end{document} 
