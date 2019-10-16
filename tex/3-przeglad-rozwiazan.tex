@@ -32,6 +32,8 @@ Robot Velma składa się z \cite{docsVelma}:
 	\item dwóch chwytaków BarrettHand
 	\item szyi o dwóch stopniach swobody
 	\item kamery Kinect XBOX 360
+	\item czujników sił i momentu
+	\item sztucznej skóry
 \end{itemize}
 \end{frame}
 
@@ -39,7 +41,21 @@ Robot Velma składa się z \cite{docsVelma}:
 
 \begin{frame}
 \frametitle{Struktura symulatora}
-
+\begin{block}{Zasada działania}
+	Symulator korzysta z komponentów OROCOS działającym w czasie rzeczywistym, wykorzystujących Gazebo
+	do uzyskania informacji o otoczeniu.
+\end{block}
+\medskip
+System składa się z następujących komponentów:
+\begin{itemize}
+	\item \texttt{torso\_{}sim}
+	\item \texttt{lwr\_{}l\_{}sim} oraz \texttt{lwr\_{}r\_{}sim}
+	\item \texttt{left\_{}ft\_{}sensor} oraz \texttt{right\_{}ft\_{}sensor}
+	\item \texttt{left\_{}hand} oraz \texttt{right\_{}hand}
+	\item \texttt{right\_{}hand\_{}tactile}
+	\item \texttt{left\_{}hand\_{}optoforce}
+\end{itemize}
+Kamera jest symulowana oddzielnie, wykorzystując dostępny pakiet ROS.
 \end{frame}
 
 %------------------------------------------------
@@ -69,5 +85,16 @@ Robot Velmobil posiada \cite{docsVelma}:
 
 \begin{frame}
 \frametitle{Struktura symulatora}
-
+\begin{block}{Zasada działania}
+Symulator bazy mobilnej został przygotowany w postaci wtyczki do Gazebo. 
+Jest on znacznie prostszy niż symulator korpusu i nie jest przystosowany
+do pracy z rzeczywistym sprzętem.
+\end{block}
+\bigskip
+Sterowanie pojazdem
+odbywa się poprzez odbieranie i nadawanie wiadomości na tematach.
+\begin{itemize}
+	\item \texttt{/omnivelma/vels} - ustawienie prędkości kół
+	\item \texttt{/omnivelma/encoders} - kąt i prędkość kół z enkoderów
+\end{itemize}
 \end{frame}
