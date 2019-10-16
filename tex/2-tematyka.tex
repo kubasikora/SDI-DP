@@ -1,136 +1,110 @@
 \section{Tematyka pracy}
 %------------------------------------------------
 
-\subsection{Robotyka manipulacyjna}
-
-\begin{frame}
-\frametitle{Robotyka manipulacyjna}
-\begin{block}{Główne zadanie robotyki manipulacyjnej}
-Realizacja zadań kończyny górnej człowieka \cite{siewruk}:
-\begin{itemize}
-	\item zadania manipulacyjne realizowane przez chwytak
-	\item zadania wysięgnikowe realizowane przez ramię
-\end{itemize}
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Przegląd manipulatorów}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Sterowanie pozycyjne}
-
-\begin{block}{}
-Regulatory osi sterowanej kształtują prądy na podstawie różnicy pomiędzy położeniem aktualnym a zadanym.
-Położenie zadane osi jest określane na podstawie wcześniej obliczonego odwrotnego zagadnienia kinematyki \cite{sterowanie}.
-\end{block}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Sterowanie pozycyjne - problem}
-
-\begin{block}{Kontakt z otoczeniem}
-W sytuacji gdy na drodze manipulatora znajdzie się przeszkoda, dążenie do zredukowania uchybu może powodować wzrost prądu
-w silniku.
-\end{block}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Sterowanie impedancyjne}
-\begin{block}{Definicja (ogólna)}
-Sterowanie impedancyjne to kontrolowanie przekazywania energii do odbiornika przez zmiany nie tylko poziomu źródła ale również jego impedancji (lub admitancji). \cite{pl}.
-\end{block}
-
-\begin{block}{Definicja (robotyka, uproszczona)}
-Sterowanie impedancyjne to sterownie ze zmienną sztywnością końcówki manpiulatora. 
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Sterowanie impedancyjne}
-
-\begin{block}{}
-Wprowadzenie w stawach sterowania impedancyjnego zapobiega kolizji (również samokolizji) ale zmniejsza 
-prawdopodobieństwo dokładnego osiągnięcia zadanej pozycji \cite{borkowska}.
-\end{block}
-
-\end{frame}
-
-%------------------------------------------------
-
-
-\subsection{Robotyka mobilna}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Robotyka mobilna}
-\begin{block}{Główne zadanie robotyki mobilnej}\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Roboty kołowe}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Przegląd robotów kołowych}
-% rozne kola, proste nadażne szwedzkie, kinematyczne coś tam
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Więzy ruchu}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Koła szwedzkie}
-
-\end{frame}
-
-%------------------------------------------------
-
-\subsection{Symulacja robotów}
-
 \begin{frame}
 \frametitle{Symulacja robotów}
-
+\begin{block}{Cel symulacji}
+	Głównym celem symulacji robotów jest zapewnienie bezpieczeństwa:
+	\begin{itemize}
+		\item ludziom
+		\item środowisku
+		\item systemowi robotycznemu
+	\end{itemize}
+\end{block}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Symulator Gazebo}
-
+	\frametitle{Niebezpieczeństwa}
+	Brak przetestowania systemu przed uruchomieniem w rzeczywistości może powodować \cite{bezpieczenstwo}:
+	\begin{itemize}
+		\item wydatki nieuwzględnione w początkowym kosztorysie
+		\item opóźnienia w eksperymentach
+		\item uszkodzenie sprzętu
+		\item obrażenia u ludzi
+	\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{Porównanie symulacji z działaniem w rzeczywistości}
-
+\begin{figure}
+	\includegraphics[scale=0.35]{./images/otwieranie_gz.png}
+	\setcaptioncitation{T.Winiarski. Wybrane aspekty bezpieczeństwa w badaniach robotów usługowych}
+	\caption{Zadanie otwierania drzwi w a) symulatorze Gazebo b) w narzędziu Rviz}
+	\end{figure}
 \end{frame}
 
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Porównanie symulacji z działaniem w rzeczywistości}
+\begin{figure}
+	\includegraphics[scale=0.35]{./images/otwieranie_real.png}
+	\setcaptioncitation{T.Winiarski. Wybrane aspekty bezpieczeństwa w badaniach robotów usługowych}
+	\caption{Zadanie otwierania drzwi w a) środowisku podatnym b) w środowisku rzeczywistym}
+	\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+	\frametitle{Symulator Gazebo}
+	Symulator Gazebo umożliwia:
+	\begin{itemize}
+		\item symulację robotów w otwartych i zamkniętych środowiskach
+		\item tworzenie własnych wtyczek dla własnych efektorów i czujników 
+		\item integrację z Robot Operating System
+		\item tworzenie własnych modeli obiektów w popularnych formatach SDF i URDF
+		\item symulowanie światów przy użyciu różnych silników fizyki 
+	\end{itemize}
+	\bigskip \medskip
+	\begin{figure}
+		\includegraphics[scale=0.3]{./images/gazebo.png}
+		\setcaptioncitation{\texttt{gazebosim.org}}
+		\caption{Logo symulatora Gazebo}
+	\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+	\frametitle{Robot Operating System}
+	\begin{block}{ROS}
+		\textit{Robot Operating System} jest otwartoźródłowym meta-systemem operacyjnym dla robotów.
+		Umożliwia rozproszoną komunikację pomiędzy procesami, a także dostarcza narzędzia
+		do analizy i zbierania danych.
+	\end{block}
+	\medskip
+	\begin{figure}
+		\includegraphics[scale=0.2]{./images/ros-melodic.png}
+		\setcaptioncitation{\texttt{ros.org}}
+		\caption{Logo systemu ROS Melodic Morenia}
+	\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+	\frametitle{Robot Operating System}
+	\begin{figure}
+		\includegraphics[scale=0.4]{./images/system-sim.png}
+		\setcaptioncitation{\texttt{rcprg-ros-pkg.github.io/velma\_{}docs/2017/10/13/01\_{}introduction\_{}01/}}
+		\caption{Podstawowa struktura sterownika robota Velma w symulacji}
+	\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+	\frametitle{Robot Operating System}
+	\begin{figure}
+		\includegraphics[scale=0.4]{./images/system-hw.png}
+		\setcaptioncitation{\texttt{rcprg-ros-pkg.github.io/velma\_{}docs/2017/10/13/01\_{}introduction\_{}01/}}
+		\caption{Podstawowa struktura sterownika rzeczywistego robota Velma}
+	\end{figure}
+\end{frame}
+	
 %------------------------------------------------

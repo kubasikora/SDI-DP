@@ -15,6 +15,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{luainputenc}
+\usepackage{caption}
+\DeclareCaptionFormat{citation}{%
+   \ifx\captioncitation\relax\relax\else
+     \captioncitation\par
+   \fi
+   #1#2#3\par}
+\newcommand*\setcaptioncitation[1]{\def\captioncitation{\tiny{\textit{Źródło:}~#1}\medskip}}
+\let\captioncitation\relax
+\captionsetup{format=citation,justification=centering}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -57,11 +66,11 @@ Promotor: dr inż. Tomasz Winiarski
 
 \input{tex/1-cel-pracy.tex}
 \input{tex/2-tematyka.tex}
-%\input{tex/3-przeglad-rozwiazan.tex}
-%\input{tex/4-zadania-pracy.tex}
-%\input{tex/5-dotychczasowe-wyniki.tex}
-%\input{tex/6-plan-semestru.tex}
-%\input{tex/7-perspektywy-rozwoju.tex}
+\input{tex/3-przeglad-rozwiazan.tex}
+\input{tex/4-zadania-pracy.tex}
+\input{tex/5-dotychczasowe-wyniki.tex}
+\input{tex/6-plan-semestru.tex}
+\input{tex/7-perspektywy-rozwoju.tex}
 \input{tex/8-podsumowanie.tex}
 
 \end{document} 
