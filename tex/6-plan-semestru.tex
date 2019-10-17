@@ -1,25 +1,44 @@
 \section{Plan prac na bieżący semestr}
 
 \begin{frame}
-	\frametitle{Harmonogram prac}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
 	\frametitle{Połączenie modeli}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-	\frametitle{Przygotowanie środowiska symulacyjnego}
+	\begin{block}{Zadanie}
+	Stworzyć jednolity system uruchamiania obu komponentów w symulatorze
+	Gazebo, tak aby korpus znalazł się na bazie mobilnej.
+	\end{block}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 	\frametitle{Implementacja zaprojektowanego systemu sterowania}
+	\begin{block}{Zadanie}
+	Na podstawie wcześniejszego projektu systemu, zaimplementować 
+	sterownik jako węzeł ROS. Założyć że komponenty poruszają się 
+	niezależnie od siebie.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+	\frametitle{Harmonogram prac}
+	\centering
+	\begin{ganttchart}[hgrid, vgrid]{1}{18}
+		\gantttitle{Październik}{5} 
+		\gantttitle{Listopad}{4}
+		\gantttitle{Grudzień}{5} 
+		\gantttitle{Styczeń}{4} \ganttnewline
+		\ganttbar{Specyfikacja}{1}{3} \ganttnewline
+		\ganttbar{Model}{1}{6} \ganttnewline
+		\ganttbar{Sterownik}{7}{11} \ganttnewline
+		\ganttbar{Praca inż.}{3}{6}  \ganttbar{}{12}{18} \ganttnewline
+		\ganttmilestone{Seminarium}{4} \ganttmilestone{}{11} 
+		\ganttlink{elem1}{elem2}
+		\ganttlink{elem2}{elem4}
+		\ganttlink{elem0}{elem2}
+		\ganttlink{elem0}{elem3}
+		\end{ganttchart}
 \end{frame}
 
 %------------------------------------------------
