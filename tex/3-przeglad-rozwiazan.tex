@@ -45,22 +45,21 @@ Robot Velma składa się z \cite{docsVelma}:
 	Symulator korzysta z komponentów OROCOS działającym w czasie rzeczywistym, wykorzystujących Gazebo
 	do uzyskania informacji o otoczeniu.
 \end{block}
-\medskip
-System składa się z następujących komponentów:
-\begin{itemize}
-	\item \texttt{torso\_{}sim}
-	\item \texttt{lwr\_{}l\_{}sim} oraz \texttt{lwr\_{}r\_{}sim}
-	\item \texttt{left\_{}ft\_{}sensor} oraz \texttt{right\_{}ft\_{}sensor}
-	\item \texttt{left\_{}hand} oraz \texttt{right\_{}hand}
-	\item \texttt{right\_{}hand\_{}tactile}
-	\item \texttt{left\_{}hand\_{}optoforce}
-\end{itemize}
-Kamera jest symulowana oddzielnie, wykorzystując dostępny pakiet ROS.
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
+	\frametitle{Struktura symulatora}
+	\begin{figure}
+	\includegraphics[scale=0.40]{./images/velma_sim_bdd.png}
+	\caption{Struktura symulatora części manipulacyjnej z kamerą}
+	\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame} 
 \frametitle{Robot Velmobil}
 \begin{figure}
 \includegraphics[scale=0.20]{./images/omnivelma_gz.png}
