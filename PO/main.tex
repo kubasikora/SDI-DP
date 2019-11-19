@@ -1,0 +1,76 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+\usetheme{Madrid}
+}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{polski}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{pgfgantt}
+\usepackage{caption}
+\DeclareCaptionFormat{citation}{%
+   \ifx\captioncitation\relax\relax\else
+     \captioncitation\par
+   \fi
+   #1#2#3\par}
+\newcommand*\setcaptioncitation[1]{\def\captioncitation{\tiny{\textit{Źródło:}~#1}\medskip}\normalsize}
+\let\captioncitation\relax
+\captionsetup{format=citation,justification=centering}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Seminarium Dyplomowe Inżynierskie]{Integracja części manipulacyjnej i bazy mobilnej robota Velma na potrzeby symulacji}
+
+\author{Jakub Sikora} 
+\institute[]
+{
+Zakład Sterowania Systemów \\
+Instytut Automatyki i Informatyki Stosowanej \\
+\medskip
+Promotor: dr inż. Tomasz Winiarski
+}
+\date{13 grudnia 2019}
+
+\AtBeginSection[]
+{
+    \begin{frame}[plain, noframenumbering]
+        \frametitle{Agenda}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Agenda}
+\tableofcontents
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\input{tex/1-cel-pracy-zastosowania.tex}
+\input{tex/2-przeglad-rozwiazan.tex}
+\input{tex/3-rozwiazanie-problemu.tex}
+\input{tex/4-wyniki-badan.tex}
+\input{tex/5-podsumowanie-wnioski.tex}
+%% dodatkowe
+\input{tex/6-dodatkowe-slajdy.tex}
+
+\end{document} 

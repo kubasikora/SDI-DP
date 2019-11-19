@@ -15,5 +15,7 @@
 *-blx.bib
 *.pdf
 
-build
-pdf
+DP/build
+DP/pdf
+PO/build
+PO/pdf

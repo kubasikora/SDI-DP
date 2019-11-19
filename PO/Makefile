@@ -8,6 +8,7 @@ PDFLATEX = pdflatex
 LUALATEX = lualatex
 XELATEX = xelatex
 TEXFLAGS = -synctex=1 --interaction=nonstopmode 
+NAME = po
 
 all: pdf
 
@@ -30,5 +31,5 @@ base:
 	$(LATEXMK) $(MKFLAGS) \
 		-output-directory=$(OUT) \
 		-pdflatex="$(CTEX) $(TEXFLAGS)" $<
-		mkdir -p $(PDF_DIR)
-		cp ./$(OUT)/main.pdf ./$(PDF_DIR)/$(CTEX).pdf
+		mkdir -p $(PDF_DIR)/$(CTEX)
+		cp ./$(OUT)/main.pdf ./$(PDF_DIR)/$(CTEX)/$(NAME).pdf
