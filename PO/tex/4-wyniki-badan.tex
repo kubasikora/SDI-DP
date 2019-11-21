@@ -1,7 +1,11 @@
 \section{Wyniki badań} 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 			wykresy predkosci			   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
-\frametitle{Badania regulatorów prędkości zadanej}
+\frametitle{Testowa trajektoria prędkości zadanej}
 	\begin{figure}[t]
 	    \centering
 		 \begin{tikzpicture}
@@ -9,9 +13,9 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=37, ymin=0.0, ymax=0.5,
+			xmin=0, xmax=50, ymin=-0.3, ymax=0.5,
 			xlabel={$t$},
-			ylabel={$v(t)$},
+			ylabel={$v(t) / \omega(t)$},
 			xtick={5, 10, 15, 20, 25, 30, 35},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
@@ -43,10 +47,10 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=37, ymin=-0.1, ymax=0.3,
+			xmin=0, xmax=50, ymin=-0.2, ymax=0.3,
 			xlabel={$t$},
 			ylabel={$v(t)$},
-			xtick={10, 20, 30, 40},
+			xtick={10, 20, 30, 40, 50},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
@@ -73,10 +77,10 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=37, ymin=-0.1, ymax=0.3,
+			xmin=0, xmax=50, ymin=-0.2, ymax=0.3,
 			xlabel={$t$},
 			ylabel={$v(t)$},
-			xtick={10, 20, 30, 40},
+			xtick={10, 20, 30, 40, 50},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
@@ -104,10 +108,10 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=37, ymin=-0.3, ymax=0.6,
+			xmin=0, xmax=50, ymin=-0.3, ymax=0.6,
 			xlabel={$t$},
-			ylabel={$v(t)$},
-			xtick={10, 20, 30, 40},
+			ylabel={$\omega(t)$},
+			xtick={10, 20, 30, 40, 50},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
@@ -115,12 +119,107 @@
 			]
 				\addplot[blue, semithick] file{ ./data/controllers/odom_angular_z.csv };
 			    \addplot[red, semithick] file{ ./data/controllers/cmd_vel_angular_z.csv };
-			    \addlegendentry{$v_{\mathrm{zad}}(t)$},
-			    \addlegendentry{$v(t)$},
+			    \addlegendentry{$\omega_{\mathrm{zad}}(t)$},
+			    \addlegendentry{$\omega(t)$},
 			    \addlegendimage{no markers, red}
 				\addlegendimage{no markers, blue}
 			    \end{axis}
 		    \end{tikzpicture}
 		\caption{Porównanie przebiegów prędkości kątowej}
+	\end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 			wykresy odometrii			   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Badania regulatorów pozycji wzdłuż osi X}
+	\begin{figure}[t]
+	    \centering
+		 \begin{tikzpicture}
+			\begin{axis}[
+			width=0.95\textwidth,
+			height=0.75\textheight,
+			grid=major,
+			xmin=0, xmax=50, ymin=0, ymax=4,
+			xlabel={$t$},
+			ylabel={$x(t)$},
+			xtick={10, 20, 30, 40, 50},
+			legend pos=north west,
+			legend style={nodes={scale=0.6, transform shape}, font={\large}},
+			legend image post style={mark=-}],
+			y tick label style={/pgf/number format/1000 sep=},
+			]
+				\addplot[blue, semithick] file{ ./data/odometry/_odom_linear_x.csv };
+			    \addplot[red, semithick] file{ ./data/odometry/_gazebo_model_states_linear_x.csv };
+			    \addlegendentry{$x_{\mathrm{odom}}(t)$},
+			    \addlegendentry{$x_{\mathrm{gazebo}}(t)$},
+			    \addlegendimage{no markers, red}
+				\addlegendimage{no markers, blue}
+			    \end{axis}
+		    \end{tikzpicture}
+		\caption{Porównanie pozycji wzdłuż osi X z symulatora oraz z odometrii}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Badania regulatorów pozycji wzdłuż osi Y}
+	\begin{figure}[t]
+	    \centering
+		 \begin{tikzpicture}
+			\begin{axis}[
+			width=0.95\textwidth,
+			height=0.75\textheight,
+			grid=major,
+			xmin=0, xmax=50, ymin=0, ymax=4,
+			xlabel={$t$},
+			ylabel={$y(t)$},
+			xtick={10, 20, 30, 40, 50},
+			legend pos=north west,
+			legend style={nodes={scale=0.6, transform shape}, font={\large}},
+			legend image post style={mark=-}],
+			y tick label style={/pgf/number format/1000 sep=},
+			]
+				\addplot[blue, semithick] file{ ./data/odometry/_odom_linear_y.csv };
+			    \addplot[red, semithick] file{ ./data/odometry/_gazebo_model_states_linear_y.csv };
+			    \addlegendentry{$y_{\mathrm{odom}}(t)$},
+			    \addlegendentry{$y_{\mathrm{gazebo}}(t)$},
+			    \addlegendimage{no markers, red}
+				\addlegendimage{no markers, blue}
+			    \end{axis}
+		    \end{tikzpicture}
+		\caption{Porównanie pozycji wzdłuż osi Y z symulatora oraz z odometrii}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Badanie odometrii kąta $\gamma$}
+	\begin{figure}[t]
+	    \centering
+		 \begin{tikzpicture}
+			\begin{axis}[
+			width=0.95\textwidth,
+			height=0.75\textheight,
+			grid=major,
+			xmin=0, xmax=50, ymin=-4, ymax=4,
+			xlabel={$t$},
+			ylabel={$\gamma(t)$},
+			xtick={10, 20, 30, 40, 50},
+			legend pos=north west,
+			legend style={nodes={scale=0.6, transform shape}, font={\large}},
+			legend image post style={mark=-}],
+			y tick label style={/pgf/number format/1000 sep=},
+			]
+				\addplot[blue, semithick] file{ ./data/odometry/_odom_orientation_y.csv };
+			    \addplot[red, semithick] file{ ./data/odometry/_gazebo_model_states_orientation_y.csv };
+			    \addlegendentry{$\gamma_{\mathrm{odom}}(t)$},
+			    \addlegendentry{$\gamma_{\mathrm{gazebo}}(t)$},
+			    \addlegendimage{no markers, red}
+				\addlegendimage{no markers, blue}
+			    \end{axis}
+		    \end{tikzpicture}
+		\caption{Porównanie pozycji kąta $\gamma$ z symulatora oraz z odometrii}
 	\end{figure}
 \end{frame}
