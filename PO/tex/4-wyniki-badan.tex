@@ -16,7 +16,7 @@
 			xmin=0, xmax=50, ymin=-0.3, ymax=0.5,
 			xlabel={$t$},
 			ylabel={$v(t) / \omega(t)$},
-			xtick={5, 10, 15, 20, 25, 30, 35},
+			xtick={10, 20, 30, 40, 50},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
@@ -143,24 +143,22 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=50, ymin=0, ymax=4,
+			xmin=0, xmax=50, ymin=-0.03, ymax=0.03,
 			xlabel={$t$},
-			ylabel={$x(t)$},
+			ylabel={$\Delta x(t)$},
 			xtick={10, 20, 30, 40, 50},
+			ytick={-0.03, -0.015, 0.0, 0.015, 0.03},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
 			y tick label style={/pgf/number format/1000 sep=},
 			]
-				\addplot[blue, semithick] file{ ./data/odometry/_odom_linear_x.csv };
-			    \addplot[red, semithick] file{ ./data/odometry/_gazebo_model_states_linear_x.csv };
-			    \addlegendentry{$x_{\mathrm{odom}}(t)$},
-			    \addlegendentry{$x_{\mathrm{gazebo}}(t)$},
+			    \addplot[red, semithick] file{ ./data/odometry/x_diffs.csv };
+			    \addlegendentry{$\Delta x(t)$},
 			    \addlegendimage{no markers, red}
-				\addlegendimage{no markers, blue}
 			    \end{axis}
 		    \end{tikzpicture}
-		\caption{Porównanie pozycji wzdłuż osi X z symulatora oraz z odometrii}
+		\caption{Błąd odometrii w osi X w trakcie realizowania testowej trajektorii prędkości}
 	\end{figure}
 \end{frame}
 
@@ -173,24 +171,22 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=50, ymin=0, ymax=4,
+			xmin=0, xmax=50, ymin=-0.03, ymax=0.03,
 			xlabel={$t$},
-			ylabel={$y(t)$},
+			ylabel={$\Delta y(t)$},
 			xtick={10, 20, 30, 40, 50},
+			ytick={-0.03, -0.015, 0.0, 0.015, 0.03},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
 			y tick label style={/pgf/number format/1000 sep=},
 			]
-				\addplot[blue, semithick] file{ ./data/odometry/_odom_linear_y.csv };
-			    \addplot[red, semithick] file{ ./data/odometry/_gazebo_model_states_linear_y.csv };
-			    \addlegendentry{$y_{\mathrm{odom}}(t)$},
-			    \addlegendentry{$y_{\mathrm{gazebo}}(t)$},
+			    \addplot[red, semithick] file{ ./data/odometry/y_diffs.csv };
+			    \addlegendentry{$\Delta y(t)$},
 			    \addlegendimage{no markers, red}
-				\addlegendimage{no markers, blue}
 			    \end{axis}
 		    \end{tikzpicture}
-		\caption{Porównanie pozycji wzdłuż osi Y z symulatora oraz z odometrii}
+		\caption{Błąd odometrii w osi Y w trakcie realizowania testowej trajektorii prędkości}
 	\end{figure}
 \end{frame}
 
@@ -203,23 +199,21 @@
 			width=0.95\textwidth,
 			height=0.75\textheight,
 			grid=major,
-			xmin=0, xmax=50, ymin=-4, ymax=4,
+			xmin=0, xmax=50, ymin=-0.05, ymax=0.05,
 			xlabel={$t$},
-			ylabel={$\gamma(t)$},
+			ylabel={$\Delta\gamma(t)$},
 			xtick={10, 20, 30, 40, 50},
+			ytick={-0.05, -0.025, 0.0, 0.025, 0.05},
 			legend pos=north west,
 			legend style={nodes={scale=0.6, transform shape}, font={\large}},
 			legend image post style={mark=-}],
 			y tick label style={/pgf/number format/1000 sep=},
 			]
-				\addplot[blue, semithick] file{ ./data/odometry/_odom_orientation_y.csv };
-			    \addplot[red, semithick] file{ ./data/odometry/_gazebo_model_states_orientation_y.csv };
-			    \addlegendentry{$\gamma_{\mathrm{odom}}(t)$},
-			    \addlegendentry{$\gamma_{\mathrm{gazebo}}(t)$},
+			    \addplot[red, semithick] file{ ./data/odometry/yaw_diffs.csv };
+			    \addlegendentry{$\Delta\gamma(t)$},
 			    \addlegendimage{no markers, red}
-				\addlegendimage{no markers, blue}
 			    \end{axis}
 		    \end{tikzpicture}
-		\caption{Porównanie pozycji kąta $\gamma$ z symulatora oraz z odometrii}
+		\caption{Błąd odometrii kąta $\gamma$ w trakcie realizowania testowej trajektorii prędkości}
 	\end{figure}
 \end{frame}
