@@ -1,4 +1,218 @@
-\section{Wyniki badań} 
+\section{Wyniki testów}
+
+\begin{frame}
+	\frametitle{Scenariusz testu funkcjonalnego}
+	\begin{block}{Założenia testu}
+		W ramach testu funkcjonalnego, wykonane zostanie test polegający na:
+		\begin{itemize}
+			\item podjechaniu do szafki,
+			\item otworzeniu szafki,
+			\item wyciągnięciu przedmiotu z szafki,
+			\item podjechaniu do stołu,
+			\item odłożeniu przedmiotu na stół.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Szczegóły implementacyjne}
+	Przed wykonaniem testu zdecydowano się na kilka założeń upraszcających:
+	\begin{itemize}
+		\item pozycja obiektów jest znana,
+		\item wykorzystana jest wcześniej przygotowana mapa statyczna,
+		\item pomiędzy punktami docelowymi nie ma nieznanych przeszkód.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Świat symulacji}
+	\begin{figure}[b]
+        \label{sim_world}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.23]{images/gazebo_world.png}
+        \caption{Świat symulacji w Gazebo}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Świat symulacji}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.22]{images/static_map.jpg}
+        \caption{Odpowiadająca światowi symulacji, statyczna mapa otoczenia w Rviz}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Realizacja testu}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/start.png}
+        \caption{Pozycja startowa}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Otwieranie szafki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/otwieranie_start.png}
+        \caption{Otwieranie szafki, krok 1}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Otwieranie szafki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/otwieranie_koniec.png}
+        \caption{Otwieranie szafki, krok 2}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Otwieranie szafki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/otwarta_szafka.png}
+        \caption{Otwieranie szafki, krok 3}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Wyciąganie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.33]{images/testpuszka/wykrywanie_octomapy.png}
+        \caption{Aktualizacja mapy otoczenia}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Wyciąganie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.3]{images/testpuszka/najazd_reka_na_psuzke.png}
+        \caption{Najazd ręką na obiekt}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Wyciąganie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/chwyt.png}
+        \caption{Przygotowanie chwytu}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Wyciąganie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/chwyt_zacisniety.png}
+        \caption{Realizacja chwytu}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Wyciąganie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/wyciagniecie_puszki.png}
+        \caption{Wyciąganie obiektu z szafki}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Odkładanie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.3]{images/testpuszka/dojazd_do_celu.png}
+        \caption{Dojazd do stołu}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Odkładanie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.25]{images/testpuszka/odkladanie_puszki_start.png}
+        \caption{Przeniesienie obiektu nad stół}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Odkładanie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.27]{images/testpuszka/odkladanie_puszki_cont.png}
+        \caption{Odkładanie obiektu na stół}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Odkładanie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.27]{images/testpuszka/puszka_na_stole.png}
+        \caption{Zwolnienie chwytu}
+    \end{figure}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+	\frametitle{Odkładanie puszki}
+	\begin{figure}[b]
+        \label{sim_map}
+        \centering
+        \def\svgwidth{\columnwidth}
+        \includegraphics[scale=0.27]{images/testpuszka/odjazd_od_stolu.png}
+        \caption{Cofnięcie chwytaka i powrót do pozycji początkowej}
+    \end{figure}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 			wykresy predkosci			   %%
@@ -219,4 +433,20 @@
 		    \end{tikzpicture}
 		\caption{Błąd odometrii kąta $\gamma$ w trakcie realizowania testowej trajektorii prędkości}
 	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Test stu obrotów}
+	\begin{block}{Test stu obrotów}
+		W ramach ostatniego testu, robot miał wykonać 100 obrotów wokół własnej osi, wykorzystując
+		do tego bazę mobilną.
+	\end{block}
+	\begin{table}[]
+		\begin{tabular}{c|c|c|c}
+			   & x $[m]$       & y $[m]$     & $\gamma$ $[rad]$  \\ \hline
+		Gazebo & $\num{-0.0188}$ & $\num{-0.0176}$ & $\num{-0.4894}$  \\ \hline
+		Odom   & $\num{0.2188}$ & $\num{-0.1611}$ & $\num{0.5950}$ \\ \hline \hline
+		Różnica & $\num{-0.2127}$ & $\num{0.1709}$  & $\num{-1.0845}$ 
+		\end{tabular}
+	\end{table}
 \end{frame}
