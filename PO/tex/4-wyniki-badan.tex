@@ -247,7 +247,7 @@
 				\addlegendimage{no markers, green}
 			    \end{axis}
 		    \end{tikzpicture}
-		\caption{Trajektoria prędkości zadanej}
+		\caption{Testowa trajektoria prędkości zadanej}
 	\end{figure}
 \end{frame}
 
@@ -272,8 +272,8 @@
 			]
 				\addplot[blue, semithick] file{ ./data/controllers/odom_linear_x.csv };
 			    \addplot[red, semithick] file{ ./data/controllers/cmd_vel_linear_x.csv };
-			    \addlegendentry{$v_{\mathrm{zad}}(t)$},
-			    \addlegendentry{$v(t)$},
+			    \addlegendentry{$v^{\mathrm{zad}}_{x}(t)$},
+			    \addlegendentry{$v_{x}(t)$},
 			    \addlegendimage{no markers, red}
 				\addlegendimage{no markers, blue}
 			    \end{axis}
@@ -303,8 +303,8 @@
 			]
 				\addplot[blue, semithick] file{ ./data/controllers/odom_linear_y.csv };
 			    \addplot[red, semithick] file{ ./data/controllers/cmd_vel_linear_y.csv };
-			    \addlegendentry{$v_{\mathrm{zad}}(t)$},
-			    \addlegendentry{$v(t)$},
+			    \addlegendentry{$v^{\mathrm{zad}}_{y}(t)$},
+			    \addlegendentry{$v_{y}(t)$},
 			    \addlegendimage{no markers, red}
 				\addlegendimage{no markers, blue}
 			    \end{axis}
@@ -334,7 +334,7 @@
 			]
 				\addplot[blue, semithick] file{ ./data/controllers/odom_angular_z.csv };
 			    \addplot[red, semithick] file{ ./data/controllers/cmd_vel_angular_z.csv };
-			    \addlegendentry{$\omega_{\mathrm{zad}}(t)$},
+			    \addlegendentry{$\omega^{\mathrm{zad}}(t)$},
 			    \addlegendentry{$\omega(t)$},
 			    \addlegendimage{no markers, red}
 				\addlegendimage{no markers, blue}
